@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <input type="text" placeholder="Username" [(ngModel)]="username"/>
+  <input type="password" placeholder="Password" [(ngModel)]="pwd"/>
+  <button ion-button (click)="connect();" color="light">Sign in</button>
+  <button ion-button (click)="gotoSignup();" color="light">Sign up</button>
+</ion-content>

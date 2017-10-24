@@ -1,0 +1,33 @@
+<!--
+  Generated template for the MessagesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>messages</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="sendMessage">
+    <input type="text" placeholder="New message" [(ngModel)]="sendingMessage"/>
+    <button ion-button (click)="sendMessage();" color="light">Send</button>
+  </div>
+
+  <ion-list id="content">
+    <ion-item *ngFor="let message of messages">
+      <h2>{{message.username}}</h2>
+      <h3>At {{message.date | date: 'HH:mm dd/MM/yyyy'}}</h3>
+      <p>{{message.message}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
